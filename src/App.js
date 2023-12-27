@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from './components/Header'
 import Body from './components/Body';
-import Career from "./components/Career";
 import Cart from "./components/Cart";
 import Error from "./components/Error"; 
 import About from "./components/About";
+import { Suspense } from "react";
 import RestaurantMenu from "./components/RestaurantMenu";
 
 import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom';
@@ -15,7 +15,9 @@ const FoodApp = () =>{
         <Header/>
         <Outlet/>
     </div>)
- }
+}
+
+const Career = React.lazy(()=>import("./components/Career"));
 
 const appRounter = createBrowserRouter([
     {
@@ -40,7 +42,7 @@ const appRounter = createBrowserRouter([
             },
             {
                 path:"/career",
-                element:<Career/>
+                element:<Suspense><Career/></Suspense>
             },
             {
                 path:"/restaurants/:resId",
