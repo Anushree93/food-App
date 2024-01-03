@@ -12,4 +12,6 @@ export const CART_LOGO = 'https://i.pinimg.com/originals/cc/04/c7/cc04c727ac11d6
 
 export const LOGIN_LOGO = 'https://www.freeiconspng.com/thumbs/login-icon/user-login-icon-14.png';
 
+export const MENU_IMAGE_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/";
+
 export const RES_URL = 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5204303&lng=73.8567437&restaurantId=';
