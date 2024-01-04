@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import RestroCard from './RestroCard';
 import { SEARCH_LOGO } from '../utils/config';
 import ShimmerUI from './ShimmerUI';
 import { Link } from 'react-router-dom';
+import UserContext from '../utils/UserContext';
 
 const Body = () => {
 
-  let [searchBy, setSearchBy] = useState('');
+  let [ searchBy, setSearchBy ] = useState('');
+  const { setUserName } = useContext(UserContext); 
   const [restroList, setrestroList] = useState([]);
   //const [filteredList, setFilteredList] = useState([]);
   
@@ -34,7 +36,7 @@ const Body = () => {
   </div>):(
   <div className='my-4'>
     <div className='w-58'>
-       <input type='text' className='w-52 ml-4 border inline' 
+       <input type='text' className='w-52 ml-4 border-black inline' 
         onChange={(e)=>{ 
           setSearchBy(e.target.value);
           setrestroList(restroList.filter(res => res.info.name.toLowerCase().includes(searchBy.toLocaleLowerCase())));
@@ -43,6 +45,9 @@ const Body = () => {
         <button className='border px-1 color' onClick={()=>{
         setrestroList(restroList.filter(res => res.info.avgRating>4));
        }}>Top Rated</button> 
+       <input className='inline border-black ml-4' onChange={(e)=>{
+            setUserName(e.target.value);
+       }} type='text'/>
     </div>
     <div className='flex flex-wrap'>
     {

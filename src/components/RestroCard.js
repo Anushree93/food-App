@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { IMAGE_URL, RATING_LOGO, DELIVERY_LOGO} from '../utils/config';
+import UserContext from '../utils/UserContext';
 
 const RestroCard = (props) => {
    const { resObj } = props;
+   const { loggedInUser } = useContext(UserContext);
 
     return (
         <div className='w-52 h-76 mx-4 cursor-pointer my-4 rounded-xl'>
@@ -14,6 +16,7 @@ const RestroCard = (props) => {
             <h1 className='inline font-bold'>{resObj.info.sla.deliveryTime} mins</h1>
             <h1 className='px-2'>{resObj.info.costForTwo}</h1>
             <h1 className='px-2'>{resObj.info.cuisines.join(', ')}</h1>
+            <h1>Username : {loggedInUser}</h1>
         </div>
     )
 }

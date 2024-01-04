@@ -1,6 +1,7 @@
  import React from "react"
  //import Child1 from "./Child1"
  //import Child2 from "./Child2"
+ import UserContext from "../utils/UserContext";
 
  class About extends React.Component{
     constructor(props){
@@ -22,7 +23,7 @@
        this.setState({userInfo:result})
         //console.log('compoentDidMount of About');
     }
-
+ 
     render(){
         //console.log('render of About');
         return (<div>
@@ -31,6 +32,13 @@
           <h1> {this.state.userInfo.bio} </h1>
           <h1> {this.state.userInfo.company} </h1>
           <h1> {this.state.userInfo.login} </h1>
+          <div className="inline"> Username : 
+            <UserContext.Consumer>
+              {({loggedInUser}) => 
+                <h1 className="inline">{loggedInUser}</h1> 
+              }
+            </UserContext.Consumer>
+          </div>
           {/* <Child1 name={'Anushree'}/>
           <Child2 surname={'Deshmukh'}/> */}
           {/* <button>Counter: {this.state.count}</button><br></br>

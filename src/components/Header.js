@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {FOOD_LOGO, CART_LOGO, LOGIN_LOGO} from '../utils/config';
+import UserContext from '../utils/UserContext';
 
 const Header = () =>{
-    const [isLoggedIn, setIsLoggedIn] = useState('Login');
+
+    const { loggedInUser } = useContext(UserContext);
+
+    const [ isLoggedIn, setIsLoggedIn ] = useState('Login');
 
     return (<div className='flex justify-between border'>
         <div className='my-5 mx-5'>
@@ -18,6 +22,7 @@ const Header = () =>{
                 <li className='cursor-pointer w-20' onClick={()=>{
                     isLoggedIn==='Login'?setIsLoggedIn('Logout'):setIsLoggedIn('Login');
                 }}><img className='w-12 h-12' src={LOGIN_LOGO}/>{isLoggedIn}</li>
+                <li className='my-auto'>{loggedInUser}</li>
             </ul>
         </div>
     </div>)
