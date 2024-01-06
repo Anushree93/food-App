@@ -1,0 +1,766 @@
+---------------------------EPISODE 1--------------------------
+
+what is emmet?
+- giving you a readymade template of html5
+- ! tab
+
+Difference bwtn a library and a framework?
+- Both the framework vs library is precoded support programs to develop complex software applications. 
+- However, libraries target a specific functionality, while a framework tries to provide everything required to develop a complete application.
+- eg redux state management library
+- react is a framework
+
+what is CDN?
+- CDN is a content delivery networks which are interconnected servers located geographically sepearted providing resources on request
+- that actually helps us speeding up our web page loading for data heavy applications.
+- resources could be images or links
+- A CDN allows for the quick transfer of assets needed for loading Internet content, including HTML pages, JavaScript files, stylesheets, images, and videos.
+
+why react is named as react?
+- React is aptly named because: It "reacts" quickly to changes without reloading the whole page. 
+- It uses the virtual DOM to efficiently update parts of a webpage. It's built around components that "react" and update.
+
+what is cross origin in script tag?
+- Web pages often make requests to load resources on other servers. Here is where CORS comes in. 
+- A cross-origin request is a request for a resource (e.g. style sheets, iframes, images, fonts, or scripts) from another domain.
+- The crossorigin attribute sets the mode of the request to an HTTP CORS Request.
+
+what is difference between react and reactDOM?
+- React is a JavaScript library for building user interfaces, while ReactDOM is a separate package that provides DOM-specific methods for managing React components. 
+- In essence, React is the core library for creating components, and ReactDOM is responsible for rendering those components in a browser environment.
+
+what is difference between react development and react production js file ?
+- By default, React. js builds your project in development mode, which includes features like detailed error messages and debugging tools. 
+- However, when you're ready to deploy your application, it's important to build it in production mode to benefit from optimized performance and reduced bundle size.
+
+
+---------------------------EPISODE 2--------------------------
+
+what is npm?
+- NPM stands for node package manager. 
+- It is worlds largest software registry.
+- The open-source web project developers use it from the entire world to share and borrow packages. 
+- The npm also acts as a command-line utility for the Node.js project for installing packages in the project, dependency management, and even version management.
+
+what is webpack?
+- webpack is a javascript module bundler that is commonly used in React to bundle and manage dependencies.
+- It takes all your javascript files and other assets in a project such as images, CSS and combine them into a single bundle that can be loaded by the browser.
+
+what is parcel?
+- parcel is one of the mostly used webpack.
+- It is blazingly fast bundler which allows us the experience of hot module reloading.
+- Parcel automatically tracks all of the files, configuration, plugins, and dev dependencies that are involved in your build, and granularly invalidates the cache when something changes. 
+- It integrates with algorithms to determine what files have changed in milliseconds, no matter the project size.
+- Hot reloading
+When you make a change, Parcel automatically updates your code in the browser – no page reload necessary!
+- Diagnostics
+If you make an error in your code or configuration, Parcel displays beautiful diagnostics in your terminal and in the browser.
+
+Every error includes a syntax highlighted code frame pointing to the exact location where the error occurred, along with hints about how to fix the issue.
+
+Many diagnostics even include a documentation link where you can learn more.
+-Reliable caching
+Everything Parcel does is cached – transformation, dependency resolution, bundling, optimizing, and everything in between. This means the dev server restarts instantly, and the same code is never built twice
+- Parcel optimizes your whole app for production automatically. This includes tree-shaking and minifying your JavaScript, CSS, and HTML, resizing and optimizing images, content hashing, automatic code splitting, and much more.
+- Tree shaking
+Parcel supports tree-shaking both ES modules and CommonJS out of the box! It statically analyzes the imports and exports of each module, and removes everything that isn't used.
+- Code splitting
+When multiple parts of your application depend on the same common modules, they are automatically deduplicated into a separate bundle. This allows commonly used dependencies to be loaded in parallel with your application code and cached separately by the browser!
+
+
+What is parcel-cache?
+- In summary, `.parcel-cache` is a directory generated by the Parcel bundler, serving as a cache for storing intermediate build results. It enhances the development workflow by speeding up subsequent builds and optimizing resource usage
+
+what is npx?
+- npx is node package execute.
+- It allows developers to execute any Javascript Package available on the NPM registry without even installing it.
+
+what is difference between devdependencies and dependencies?
+- Dependency is an object that contains the library, which your project requires for production environments and functioning effectively.
+- devDependencies are those packages in the package.json file that you need only for project development purposes.
+
+What is HMR in programming?
+- Hot Module Replacement (HMR) is a feature that enables real-time updates to modules in a running application without requiring a full page reload.
+
+what is gitignore and what to include in it?
+- A .gitignore file is a plain text file that contains a list of all the specified files and folders from the project that Git should ignore and not track.
+
+difference between package.json and package-lock.json
+- In summary, the package. json file focuses on project metadata and specifying the desired versions of dependencies, while the package-lock. json file ensures deterministic installations by locking the exact versions of dependencies and sub dependencies.
+
+what is caret and tilde?
+- version 1.2.3 stands for 1 major change, 2 minor change and 3 patch release
+- ~1.2.3 will update you to all future patch version releases without incrementing the minor version. 1.2.3 to 1.2.9
+- ^1.2.3 will update you to all future minor/patch version without incrementing a major.^1.2.3 will use releases from 1.2.3 to <2.0.0.
+
+---------------------------EPISODE 3--------------------------
+
+what is JSX?
+- Javascript stands for js xml.
+- it allows us to write html in react.
+- JSX lets you write HTML-like markup inside a JavaScript file, keeping rendering logic and content in the same place. Sometimes you will want to add a little JavaScript logic or reference a dynamic property inside that markup. In this situation, you can use curly braces in your JSX to open a window to JavaScript.
+- JSX makes it easier to write and add HTML in React.
+- JSX is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file
+
+what is React.createElement Vs JSX?
+- 
+
+Benefits of JSX
+-JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement() and/or appendChild() methods.
+- JSX converts HTML tags into react elements. 
+- You are not required to use JSX, but JSX makes it easier to write React applications.
+
+how JSX works?
+- lets assume we have a header component with some set of props.
+- bahind the scenes, react is going to call the method React.createElement() method.
+
+What is the use of Babel in React?
+- Babel is a JavaScript compiler that converts modern JavaScript code into a version compatible with all browsers. Babel enables React developers to use the latest JavaScript syntax in their components. Babel transpiles modern JavaScript for use in React components and all browsers.
+- Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. 
+Here are the main things Babel can do for you:
+- Transform syntax
+Polyfill features that are missing in your target environment (through a third-party polyfill such as core-js)
+Source code transformations (codemods)
+
+What is the use of parcel in React?
+- 
+
+what is the role of type attribute in script tag?
+- The type attribute specifies the type of the script.
+- The type attribute identifies the content between the <script> and </script> tags.
+- async - For classic scripts, if the async attribute is present, then the classic script will be fetched in parallel to parsing and evaluated as soon as it is available.
+- For module scripts, if the async attribute is present then the scripts and all their dependencies will be fetched in parallel to parsing and evaluated as soon as they are available.
+defer
+- defer - This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.
+- Scripts with the defer attribute will prevent the DOMContentLoaded event from firing until the script has loaded and finished evaluating
+
+---------------------------------------EPISODE 4--------------------------------------------
+
+Is JSX mandatory for react?
+- JSX is not a requirement for using React. Using React without JSX is especially convenient when you don't want to set up compilation in your build environment. Each JSX element is just syntactic sugar for calling React.
+
+Is ES6 mandatory for react?
+- React uses ES6, and you should be familiar with some of the new features like: Classes. Arrow Functions. Variables (let, const, var)
+- Normally you would define a React component as a plain JavaScript class: If you don't use ES6 yet, you may use the create-react-class module instead: The API of ES6 classes is similar to createReactClass() with a few exceptions.
+
+how to write comments in JSX?
+-  {/* this is a comment */}
+
+what is <React.Fragment></React.Fragment> and <></>?
+- react.fragment will allow you to return multiple elements of (list of child elements) without having to wrap it in extra node in the DOM.
+- so we dont need to deal with extra node.
+- If you want to pass key to a Fragment, you can't use the <>...</> syntax. You have to explicitly import Fragment from 'react' and render <Fragment key={yourKey}>...</Fragment>.
+
+what is virtual DOM?
+- The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
+- This approach enables the declarative API of React: You tell React what state you want the UI to be in, and it makes sure the DOM matches that state. 
+- This abstracts out the attribute manipulation, event handling, and manual DOM updating that you would otherwise have to use to build your app.
+
+what is reconciliation process of virtual DOM?
+- React Reconciliation is the process through which React updates the Browser DOM. It makes the DOM updates faster in React. It updates the virtual DOM first and then uses the diffing algorithm to make efficient and optimized updates in the Real DOM
+- The diffing algorithm in React allows for the efficient updates and rendering of these DOM elements. As changes occur within the application's state or properties, React uses its diff algorithm to compare the new Virtual DOM with the old one.
+
+what is react fibre architecture?
+-React Fiber is an ongoing reimplementation of React's core algorithm. It is the culmination of over two years of research by the React team.
+- The goal of React Fiber is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is incremental rendering: the ability to split rendering work into chunks and spread it out over multiple frames.
+
+why we need keys in react ?
+- A “key” is a special string attribute you need to include when creating lists of elements in React. Keys are used in React to identify which items in the list are changed, updated, or deleted. Keys are used to give an identity to the elements in the lists
+
+when do we need keys in react?
+- In this example, the ItemList component is rendered with an initial set of items. Then we add and remove items from the list. However, because no keys have been provided, React is forced to re-render the entire list on each change, even if only one item has been added or removed. It can lead to a poor user experience
+
+Can we use index as key in react?
+- It is not recommended to use the index of the array as the key prop if you know the array will not be static. If the key is an index, reordering an item in the array changes it. Then React will get confused and re-render the incorrect element
+
+what are props in react?
+- React components use props to communicate with each other. Every parent component can pass some information to its child components by giving them props. Props might remind you of HTML attributes, but you can pass any JavaScript value through them, including objects, arrays, and functions.
+
+what is config driven UI?
+- Config-driven UI is a technique that allows you to create user interfaces based on a configuration file, such as JSON, or a TypeScript file that defines the layout and content of the UI components. This can be useful for creating dynamic and customizable UIs without hard coding them.
+
+---------------------------EPISODE 5------------------------------------------------
+
+what is named export , default export and * as export?
+- When you write a default import, you can put any name you want after import . For example, you could write import Banana from './Button.js' instead and it would still provide you with the same default export. 
+- In contrast, with named imports, the name has to match on both sides. That's why they are called named imports!
+- Named exports are useful to export several values. During the import, one will be able to use the same name to refer to the corresponding value. 
+- Concerning the default export, there is only a single default export per module. A default export can be a function, a class, an object or anything else.
+
+what is the importance of config.js file?
+- Config. js allows developers to configure their applications in an XML block instead of hard-coding values inside their scripts or in JSON objects. 
+- The XML can be embedded inside an HTML document or in a separate XML file. The configuration block may contain strings, numbers, arrays and HTML.
+
+what is react useState hooks?
+- useState is React Hook that allows you to add state to a functional component. It returns an array with two values: the current state and a function to update it. The Hook takes an initial state value as an argument and returns an updated state value whenever the setter function is called.
+-The useState Hook can be used to keep track of strings, numbers, booleans, arrays, objects, and any combination of these! We could create multiple state Hooks to track individual values.
+
+What is the difference between useState and useEffect hook in React?
+- In summary, useState is used to manage state within a component, allowing you to store and update data.
+- useEffect is used to perform side effects in a component, such as updating the document title, fetching data, or subscribing to events.
+
+what is optional chaining?
+- The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called using this operator is undefined or null, the expression short circuits and evaluates to undefined instead of throwing an error.
+
+---------------------------EPISODE 6------------------------------------------------
+
+what is micro service?
+- microservices represents a service oriented architecture where each microservice is being assigned a seperate task and expertise in that.
+- group of all microservices forms a whole application thus giving its best efficiency.
+- each microservice has to seperate task and can be deployed independently.
+
+what is monolith architecture?
+- A monolithic architecture is a traditional model of a software program, which is built as a unified unit that is self-contained and independent from other applications. 
+- The word “monolith” is often attributed to something large and glacial, which isn't far from the truth of a monolith architecture for software design. 
+
+what is difference between monolithic and microservice architecture?
+- A monolithic application is built as a single unified unit while a microservices architecture is a collection of smaller, independently deployable services.
+
+why do we need useEffect hook?
+- by using this hook, we tell react to do a specific task after our components renders
+- react wil remember this function and calls it once DOM is rendered on UI
+- to get subscribed to events, fetch API data.
+
+what is Shimmer UI?
+- to give an user a experience of something is going to be load on the UI
+- showing dummy container to hightlight
+
+whta is JS expression and JS statement?
+- At a high level, an expression is a valid unit of code that resolves to a value.
+
+what is conditional rendering?
+- In React, conditional rendering is the process of displaying different content based on certain conditions or states. It allows you to create dynamic user interfaces that can adapt to changes in data and user interactions. In this process, you can use conditional statements to decide what content should be rendered.
+e.g. if I am loading an data, till the time data loads I can show loading screen and then the actual screen once data is loaded.
+
+what is CORS?
+- cross origin resource sharing
+- Cross-origin resource sharing (CORS) is a browser security feature that restricts cross-origin HTTP requests that are initiated from scripts running in the browser.
+- If you cannot access your API and receive an error message that contains Cross-Origin Request Blocked , you might need to enable CORS. CORS is typically required to build web applications that access APIs hosted on a different domain or origin. 
+
+what is async and await?
+- Inside an async function, you can use the await keyword before a call to a function that returns a promise. This makes the code wait at that point until the promise is settled, at which point the fulfilled value of the promise is treated as a return value, or the rejected value is thrown.
+
+
+---------------------------EPISODE 7------------------------------------------------
+
+what is console.log(useState())
+- gives array of 2 
+
+useEffect 3 cases of second parameter
+- 1. if deepndency array is given, after initial render, it will effect on change of dependency array.
+- 2. if array is [], after initial render,it will effect only once.
+- 3. if paramter is not passed, it will effect on each render and rerender of comp
+
+what is SPA 
+- An SPA (Single-page application) is a web app implementation that loads only a single web document, and then updates the body content of that single document via JavaScript APIs 
+
+what is client side routing and server side routing?
+- client side routing - routing on web app without interaction with server.
+- for spa, we can update the url for each module and load a specific UI without having to make an API call to server
+- Server side routing - will make a call to server and navigation to new html doc
+
+---------------------------------------------------EPISODE 8------------------------------------------------------------
+
+How do you create Nested routes create
+-
+
+Read about createHashRouter, createMemoryRouter
+- createHashRouter - creates hash url of your application url.it is used if you are unable to redirect all your traffic to application url
+- createMemoryRouter - Instead of using the browser's history, a memory router manages its own history stack in memory. It's primarily useful for testing and component development tools like Storybook, but can also be used for running React Router in any non-browser environment.
+
+what is lifecycle methods in react class based components -
+- Mounting phase lifecycle method flows 
+- constructor
+- static getDerivedStateFromProps()
+- render()
+- componentDidMount()
+
+if it is <Parent> 
+            <Child1/>
+            <Child2/>
+         </Parent>
+
+- It would call 
+constructor of parent
+render of parent
+constructor of child1
+render of child1
+constructor of child2
+render of child2
+componentDidMount of child1
+componentDidMount of child2
+componentDidMount of parent
+
+-Updating phase lifecycle method
+- static getDerivedStateFromProps()
+- shouldComponentUpdate()
+- render()
+- getSnapshotBeforeUpdate()
+- componentDidUpdate()
+
+why do we need componentDidMount()?
+- it is the last step while mounting a component in react life cycle.
+- using this method we can use react code when compoent has already been mounted to DOM
+- It is used for handling all API calls and setting up to subscriptions. 
+
+why do we need componentWillUnmount()?
+- componentWillUnmount() is invoked immediately before a component is unmounted and destroyed. 
+- Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount().
+
+why do we use super(props) in constructor?
+- so we need super() class in constructor to call the constructor of parent class
+- here the parent class is React.Component
+- if we need access to 'this' keyword in constructor, we need to call super method. 
+
+--------------------------------------------------- EPISODE 9 ------------------------------------------------------------
+
+when and why do we need Lazy()?
+- when do we need it - is when we need to load a specific part of application on demand or if user clicks on it instead of loading all at once to reduce initial load time.
+- Lazy loading is one the good way to make app efficient and load quickly
+- it allows us to split the code
+- The React.lazy() function allows you to render a dynamic import as a normal component. It makes it simple to construct components that are loaded dynamically yet rendered as regular components.
+
+what is suspense?
+- it is a feature that manages asynchronous operations in a react app.
+- it will ask you to 'wait' to get render on UI.
+- It lets your component communicate to react that they are waiting for some data.
+- suspense can have fallback component while it loads/fails to load.
+
+diffrenet names of it - 
+- code splitting
+- code chunking
+- lazy loading
+- dynamic bundling
+- on demand loading
+
+--------------------------------------------------- EPISODE 10 ------------------------------------------------------------
+
+expolore all the ways of writing CSS
+- traditional way of using index.css 
+- bootstrap
+- tailwind
+- chakra UI
+
+how to configure tailwindcss
+- install 'npm install -D tailwindcss postcss'
+- now to initialize and to create 'tailwind.config.js' -> npx tailwindcss init
+- now create .postcssrc file with following code.
+- add content in tailwind.config.js file
+- Add the Tailwind directives to your CSS
+
+what is postcss?
+- PostCSS is a tool for transforming styles with JS plugins. 
+- These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more.
+
+--------------------------------------------------- EPISODE 10 ------------------------------------------------------------
+
+what is propdrilling?
+- is a way of passing a prop from a parent to a very deep hierarchy children component.
+- Prop drilling occurs when a parent component has to pass down as props to its children components that do not consume the props 
+- instead, they only pass it down to another component that finally consumes it.
+- For example, if the component hierarchy is too deep, prop drilling can lead to long chains of nested components that pass data down through multiple levels of nesting.
+
+what is lifting state up?
+- Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their closest common parent, and then pass it down to them via props. This is known as lifting state up
+
+what are context provider and context consumer?
+- The provider is responsible for creating and managing the context, which holds the data to be shared between components.
+- On the other hand, the consumer is used to access the context and its data from within a component.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+Redux offeres 2 libraries that we are going to use - 
+react- redux - package which is used as a bridge between react application and redux library
+redux tool kit - package which offers us a set of intended way of writing redux logic which basically helps us to address 3 issues we had with redux previously
+ 1. configuring redux store was too complicated
+ 2. use of too much boilerplate code
+ 3. I had to add lot of redux packages to do anything useful with redux
+
+
+install @reduxjs/toolkit
+install react-redux
+configure store() - rkt
+import provider from react-redux
+wrap the app in provider component passing in store={appStore} as prop
+now make cartslice.js => createSlice({}) from rkt
+ - it has name="cart",
+ initialState = {
+    items:[]
+ }
+ reducers= {
+    addItem : (state, action) =>{
+        state.items.push
+    }
+    removeItem : (state) =>{
+        state.items.pop();
+    }
+    clearCart : () =>{
+        state.items.length = 0;
+    }
+ }
+
+- go in congigureStore({
+    reducer:{
+    cart: cartReducer,
+    }
+})
+
+- to read the value from store, use useSelector
+const { cartItems } = useSelector((store)=> {return store.cart.items});
+
+- to dispatch any action.
+- use useDispatch hook from react-redux
+- const dipatch = useDispatch();
+- dipatch(addItem("pizza"));
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Pure components
+- In simple words, If the previous value of the state or props and the new value of the state or props are the same, the component will not re-render itself. Pure Components restricts the re-rendering when there is no use for re-rendering of the component.
+- It performs a shallow comparison of the component's previous and new props or state, preventing a re-render if the props have not changed.
+- It extends Pure components.
+- It is simply used for rendering purpose. 
+
+
+------------------------------------------------- EPISODE 13---------------------------------------------------------------
+
+there are 3 types of testing 
+- unit testing
+- integration testing
+- end to end testing 
+
+
+react testing library comes readymade with 'create-react-app'
+react testing library is build on top of DOM testing library.
+Jest is a JS test framework
+
+RTL uses jest
+jest uses babel
+
+- install RTL 
+  npm install -D @testing-library/react
+
+- install jest
+  npm install -D jest
+
+- go to jest website and see for the ' using babel' dependencies
+- configure babel
+
+now our parcel internally uses babel which has its own config somewhere in our project
+- but here we are setting another config for babel
+- so to override the config setup by parcel, we uses .parcelrc file
+
+do npm run test
+
+- now to configure jest
+  npx jest --init
+- jest.config.js file would be created
+
+now install jsdom library
+- npm install --save-dev jest-environment-jsdom
+
+now run 
+- npm run test to check if configurations are done properly.it will show no test found.
+
+-now with render, install @babel/preset-react again and add it in babel config.
+
+-to access screen object methods for assertion
+-install @testing-library/jest-dom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------
+JS 
+
+whats difference between arrow function and JS functions?
+- 1. No arguments object in arrow functions
+function print() {
+  console.log(arguments)
+}
+const print = () => {
+  console.log(arguments)
+} 
+// Uncaught ReferenceError: arguments is not defined
+
+
+- 2. arrow functions cannot be called as constructors with new keyword
+   const car = new Car();
+
+- arrow functions do not create this binding.
+- Arrow functions don't have their own bindings to this , arguments , or super , and should not be used as methods.
+
+- 3. Arrow functions do not create their own this binding
+In a traditional function, its internal this value is dynamic, it depends on how the function is invoked. For example:
+
+const user = {
+   name : 'Anushree',
+   getInfo =  function () {
+     return this.name;
+   }
+}
+
+const value = user.getInfo;
+console.log(value());         //undefined
+console.log(user.getInfo());  //Anushree
+
+Unlike regular functions, arrow functions don’t have their own this binding. If we access this in the arrow function it will return the this of the closest non-arrow parent function.
+
+const user = {
+   name : 'Anushree',
+   getInfo = () => {
+     return this.name;
+   }
+}
+
+const value = user.getInfo;
+console.log(value());         //undefined
+console.log(user.getInfo());  //undefined 
+
+here this will refer to global object. 
+So call, apply, bind cannot change the value of the arrow function this.
+
+- 4. Arrow functions cannot be declared
+When it comes to functions, you need to understand function declaration and function expression.
+
+Function declarations involve the function keyword and a name for the function. For example:
+
+function printHello() {
+  console.log("hello")
+}
+printHello is a declared function. But, check out this example:
+
+const printHello = function() {
+  console.log("hello")
+}
+In this case, printHello is not a declared function. We have an anonymous function (not named) on the right side of the assignment operator. This function is a function expression, which is assigned to the printHello variable.
+
+Though the function keyword is used, there is no name assigned, which makes it an expression and not a declaration. To prove that it is not a declaration, try the following:
+
+function() {
+ console.log("hello")
+}
+Because this expression is not assigned to a variable, you get an error: SyntaxError: Function statements require a function name
+
+Back to arrow functions. Normal functions can be declared when you use the function keyword and a name, but arrow functions cannot be declared. They can only be expressed because they are anonymous:
+
+const printHello = () => {
+  console.log("hello")
+}
+As you see here, we have an anonymous function (starting from () => ...) which is assigned to the printHello variable. printHello is not a declared function here. It is a variable that holds the evaluated value from the function expression. 
+
+- 5. Arrow functions cannot be hoisted.
+
+printName()
+
+console.log("hello")
+
+function printName() {
+  console.log("i am dillion")
+}
+
+// i am dillion
+// hello
+
+---
+printName()
+
+console.log("hello")
+
+const printName = () => {
+  console.log("i am dillion")
+}
+
+// ReferenceError: Cannot access 'printName' before initialization
+
+-----
+if we use var
+
+printName()
+
+console.log("hello")
+
+var printName = () => {
+  console.log("i am dillion")
+}
+
+// TypeError: printName is not a function
+
+
+----------------------------------------------
+spread operator 
+
+1. copying elements of 1 array to another.
+
+const arr1 = ['A', 'B', 'C'];
+const arr2 = ['D', 'E', 'F', ...arr1];
+console.log(arr2);           //[ 'D', 'E', 'F', 'A', 'B', 'C' ]
+
+2. Sending an array as arguments to function
+
+const arr = [3,4,5,6];
+function sumAllArgs(x,y,z){
+  console.log(x+y+z);
+}
+
+sumAllArgs(0,1,2);
+sumAllArgs(...arr);
+
+3. Copy arrays
+var arr = [1,2,3];
+var arr2 = [...arr];
+console.log(arr);    // [1,2,3]
+console.log(arr2);   // [1,2,3]
+
+4. Concatenation
+var arr = [1,2,3];
+var arr2 = [4,5,6];
+console.log(arr.concat(arr2));   //[1,2,3,4,5,6]
+console.log(...arr, ...arr2);    // 1 2 3 4 5 6
+
+----------------------------------------------
+
+Rest Operator 
+
+1. Rest parameters are used to create functions that accept any number of arguments.
+
+function sumAll(...args) {
+ // args is the name for the array
+  let sum = 0;
+  for (let arg of args) sum += arg;
+  return sum;
+}
+// here the function can be called with any number of arguments
+sumAll(1)
+sumAll(1,2,3)
+
+----------------------------------------------
+splice slice
+
+
+----------------------------------------------
+call 
+
+let user1 = {
+  name: 'anushree',
+  lname:'deshmukh',
+  print: function(){
+    console.log(this.name +" "+this.lname);
+  }
+}
+
+user1.print();     //anushree deshmukh
+
+let user2={
+    name: 'A',
+    lname:'B'
+}
+user1.print.call(user2);    // A B
+
+this is also know as function borrowing
+
+----------------------------------------------
+
+apply
+
+let user1 = {
+  name: 'anushree',
+  lname:'deshmukh',
+  print: function(city,state){
+    console.log(this.name +" "+this.lname+ " "+city+" "+state); //Anushree deshmukh nashik maha
+  }
+}
+
+user1.print('nashik', 'maha');
+
+let user2={
+    name: 'A',
+    lname:'B'
+}
+user1.print.apply(user2,['c','d']);    //A B c d 
+
+----------------------------------------------
+
+bind - method actually bind the object with that method its been called upon.
+creates a copy of function and can be invoked later also
+it will always have reference to this.
+
+function print(city,state){
+   console.log(this.name +" "+this.lname+ " "+city+" "+state);
+}
+
+let user1 = {
+  name: 'anushree',
+  lname:'deshmukh'
+}
+
+let printbind = print.bind(user1,'nashik', 'maha');
+printbind();   //anushree deshmukh nashik maha
+
+
+----------------------------------------------
+map filter reduce
+----------------------------------------------
+
+----------------------------------------------
+
+hoisting
+
+----------------------------------------------
+Closures
+----------------------------------------------
+Promises async await promise chain
+
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+
+Shallow copy & deep copy
+
+Shallow Copy stores the references of objects to the original memory address. Deep copy stores copies of the object's value. Shallow Copy reflects changes made to the new/copied object in the original object. Deep copy doesn't reflect changes made to the new/copied object in the original object
+----------------------------------------------
