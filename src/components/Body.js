@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import RestroCard from './RestroCard';
+import RestroCard, {withPromotedLabel} from './RestroCard';
 import { SEARCH_LOGO } from '../utils/config';
 import ShimmerUI from './ShimmerUI';
 import { Link } from 'react-router-dom';
@@ -11,15 +11,15 @@ const Body = () => {
   const { setUserName } = useContext(UserContext); 
   const [restroList, setrestroList] = useState([]);
   //const [filteredList, setFilteredList] = useState([]);
+
+  const PromotedLabel = withPromotedLabel(RestroCard);
   
-  console.log('anushree body');
   //there are 2 parameter that useEffect hook takes
   //1 is arrow function and 2nd is dependency Array.
   //when theres no second parameter, it effects after every render & rerender of your component 
   //when there is [], it effects after every render of your body, calls useEffect and rerender the comp again
   //when there is 'state variable', it will effect on every change of that variable.
   useEffect(()=>{
-    console.log('anushree ueEffect');
     fetchData();
   },[]);
 
@@ -28,6 +28,7 @@ const Body = () => {
     const json = await result.json();
     const restList = json?.data?.cards?.filter(res=> res?.card?.card?.id === "restaurant_grid_listing");
     setrestroList(restList[0].card.card.gridElements.infoWithStyle.restaurants);
+    console.log(restroList);
   }
 
   return restroList.length===0?
@@ -51,7 +52,12 @@ const Body = () => {
     </div>
     <div className='flex flex-wrap'>
     {
-        restroList.map(res => <Link to={'/restaurants/'+res.info.id} key={res.info.id}><RestroCard resObj={res}></RestroCard></Link>)
+        restroList.map(res => <Link to={'/restaurants/'+res.info.id} key={res.info.id}>
+          {
+            res.info.isOpen? <PromotedLabel resObj={res}></PromotedLabel>: <RestroCard resObj={res}></RestroCard>
+          }
+        
+        </Link>)
     }
     </div>
   </div>
