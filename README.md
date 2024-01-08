@@ -678,8 +678,43 @@ sumAll(1)
 sumAll(1,2,3)
 
 ----------------------------------------------
-splice slice
+slice
 
+1. creates a shallow copy of array.
+slice() method does not alter the original array but instead creates a shallow copy.
+
+var arr = [0,1,2,3,4,5];
+var output = arr.slice();
+console.log(arr);          //[0,1,2,3,4,5]
+console.log(output);       //[0,1,2,3,4,5]
+
+2. if first param is given, consoder it as start index which is to be included
+var arr = [0,1,2,3,4,5];
+var output = arr.slice(2);
+console.log(output);          //[2,3,4,5]
+
+3. if 2nd param is given, consider it as end index which should not be included
+var arr = [0,1,2,3,4,5];
+var output = arr.slice(2,4);
+console.log(output);          //[2,3]
+
+4. it negative start param is given, it should start from end of an array
+var arr = [0,1,2,3,4,5];
+var output = arr.slice(-2);
+console.log(output);          //[4,5]
+
+----------------------------------------------
+Splice
+
+1.the splice() method will change the contents of the original array.
+splice(start, optional delete count, optional items to add)
+
+1. if we want to add another item at index 1
+const food = ['pizza', 'cake', 'salad', 'cookie'];
+food.splice(1,0,'burrito');
+console.log(food);
+
+2. 
 
 ----------------------------------------------
 call 
@@ -764,3 +799,81 @@ Shallow copy & deep copy
 
 Shallow Copy stores the references of objects to the original memory address. Deep copy stores copies of the object's value. Shallow Copy reflects changes made to the new/copied object in the original object. Deep copy doesn't reflect changes made to the new/copied object in the original object
 ----------------------------------------------
+how to copy object to array
+
+const obj = {
+  firstName: 'anushree',
+  lastname: 'mahajan'
+}
+
+console.log(Object.keys(obj));        // ['firstname', 'lastname']
+
+console.log(Object.values(obj));      // ['anushree', 'mahajan']
+
+console.log(Object.entries(obj));     // [['firstname', 'lastname'], ['anushree', 'mahajan']]
+
+console.log(...Object.entries(obj)[0], ...Object.entries(obj)[1]);   // ['firstname', 'lastname',' anushree', 'mahajan']
+
+----------------------------------------------
+
+how to copy an object from another?
+
+let user1 = {
+  fname:'Anushree',
+  lname:'mahajan'
+}
+
+let user2 = user1;
+
+console.log(user1);      //{ firstname: 'anushree', lastname: 'mahajan' }
+console.log(user2);      //{ firstname: 'anushree', lastname: 'mahajan' }
+
+user1.name = 'A';
+
+console.log(user1);      //{ firstname: 'A', lastname: 'mahajan' }
+console.log(user2);      //{ firstname: 'A', lastname: 'mahajan' }
+
+Problem , here is that it will change the value of original object becuase it is copied by refernce.
+
+1. lets use spread operator.
+
+let user1 = {
+  fname:'Anushree',
+  lname:'mahajan'
+}
+
+let user2 = {...user1};
+
+user1.fname = 'A';
+
+console.log(user1);      //{ firstname: 'A', lastname: 'mahajan' }
+console.log(user2);      //{ firstname: 'anushree', lastname: 'mahajan' }
+
+2. using Object.assign method
+
+let user1 = {
+  fname:'Anushree',
+  lname:'mahajan'
+}
+
+let user2 = Object.assign({}, user1)
+
+user1.fname = 'A';
+
+console.log(user1);      //{ firstname: 'A', lastname: 'mahajan' }
+console.log(user2);      //{ firstname: 'anushree', lastname: 'mahajan' }
+
+3. Using JSON.parse method.
+
+let user1 = {
+  fname:'Anushree',
+  lname:'mahajan'
+}
+
+let user2 = JSON.parse(JSON.stringify(user1));
+
+user1.fname = 'A';
+
+console.log(user1);      //{ firstname: 'A', lastname: 'mahajan' }
+console.log(user2);      //{ firstname: 'anushree', lastname: 'mahajan' }
+
